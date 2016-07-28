@@ -98,3 +98,78 @@ void OnTick()
              
   }
 //+------------------------------------------------------------------+
+
+
+/*
+input int MagicNumber = 12345;
+input int Slippage = 3;
+input int      TargetPips = 150;
+input int      CompensationPips = 10;
+input int      RecoveryZonePips = 50;
+input double      InitialSize = 0.01;
+int P = 1;
+double   BuySizeTotal = 0;
+double   SellSizeTotal = 0;
+float    EntryPrice;
+bool     Position; // True for long and False for short
+bool ActiveTrade = false;
+bool EntryType;// True for long and False for short
+float BuyExit;
+float SellExit;
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+//---
+   if (Digits == 5 || Digits == 3 || Digits == 1)P = 10; else P = 1;
+//---
+   return(INIT_SUCCEEDED);
+  }
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+//---
+   
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+  
+//---
+   if (ActiveTrade)
+   {
+      //setting up long and short conditions 
+      
+      /*------------------------------------------
+      Long conditions 
+      --------------------------------------------*/
+      if (EntryType){
+      //conditions for exiting long initial positions
+         if (position && MarketInfo(Symbol(),MODE_ASK) >= BuyExit){
+            OrderClose(OrderTicket(), OrderLots(), Bid, Slippage);
+         }
+      
+      }
+      
+      
+      /*------------------------------------------
+      Short conditions
+      --------------------------------------------*/
+      
+   }
+   else
+   {
+   //entry conditions for long or short
+   }
+   
+  }
+//+------------------------------------------------------------------+
+
+
+
+*/
